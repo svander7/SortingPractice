@@ -12,23 +12,20 @@ public class FarmerAlBaryardInventoryApplicationTwo {
 		FileService fileService = new FileService();
 		Pig[] pigs = fileService.getPigsFromFile();
 		String[] pigNames = new String[4];
+
+		for (int i = 0; i < pigs.length; i++) {
+            pigNames[i] = pigs[i].getName();
+        }
 		
-		// Try displaying the array to the console, then sort it.
+		Arrays.sort(pigNames);
 		
-		pigNames[0] = pig;
-		pigNames[1] = pig1;
-  		
-		// SORT the pigs by name...
-		
-		Arrays.sort(pigs, (pig1, pig2) -> pig1.getName().compareTo(pig2.getName()));
-		System.out.println("Sorted pig names:");
-		for (String pig : pigNames) {
-			System.out.println(pigNames);
+		for (Pig pig : pigs) {
+			System.out.println(pig.getName());
 		}
 		
-//		for (String pig : pigNames) {
-//			System.out.println(pigNames);
-//		}
+		
+		// SORT the pigs by name...
+		
 		// 1. run a for loop on the pig array
 		// 2. In the for loop create an array called pig names, get the names of the pigs using
 		// the getName getter from the Pig class, save it into the pigNames string array

@@ -1,6 +1,5 @@
 package main.animals;
 
-
 public class Pig implements Comparable<Pig> {
 
 	// CREATE the field "name" which is a String		= done
@@ -33,16 +32,21 @@ public class Pig implements Comparable<Pig> {
 		this.status = status;
 	}
 
-
 	@Override
-	public String compareTo(Pig that) {
+	public String toString() {
+		return name;
+	}
+	
+	@Override
+	public int compareTo(Pig that) {
 		if (this.name.compareTo(that.name) == 0) {
-			return this.name;  
+			return this.name.compareTo(that.name);  
+		} else {
+			return this.name.compareTo(that.name);  
 		} 
 	
+	}	
+}	
 	
 	
 	
-	
-
-}
